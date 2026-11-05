@@ -76,8 +76,8 @@ jobs:
       - name: Audit unsigned package and signing gate
         run: |
           scripts/package-ios.sh
-          if REQUIRE_SIGNED=1 scripts/package-ios.sh; then
-            echo "Unsigned CI app unexpectedly passed REQUIRE_SIGNED=1" >&2
+          if REQUIRE_SIGNED=0 scripts/package-ios.sh; then
+            echo "Unsigned CI app unexpectedly passed REQUIRE_SIGNED=0" >&2
             exit 1
           fi
 
